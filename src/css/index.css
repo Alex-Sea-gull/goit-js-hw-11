@@ -1,6 +1,6 @@
 @import url('./reset.css');
 
-.login-form {
+.loadin-form {
     width: 371px;
     height: 40px;
     display: flex;
@@ -9,8 +9,6 @@
     padding: 36px;
     gap: 8px;
 }
-
-.js-form-container {}
 
 .input-text {
     box-sizing: border-box;
@@ -45,10 +43,17 @@
     color: #fff;
 }
 
-.loader-box {}
+.js-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    height: 400px;
+}
 
-.loader {}
-
-.js-loader {}
-
-.card-container {}
+.js-gallery img {
+    width: 300px;
+    height: 100%;
+    object-fit: cover;
+}
