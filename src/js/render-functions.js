@@ -10,10 +10,10 @@ export function creatMarkupImages(images) {
             <div class="photo-card">
                 <img src="${webformatURL}" alt="${tags}"/>
                 <div class="info">
-                    <p><strong>Likes:</strong> ${likes}</p>
-                    <p><strong>Views:</strong> ${views}</p>
-                    <p><strong>Comments:</strong> ${comments}</p>
-                    <p><strong>Downloads:</strong> ${downloads}</p>
+                    <p class="text-photo"><strong>Likes:</strong> ${likes}</p>
+                    <p class="text-photo"><strong>Views:</strong> ${views}</p>
+                    <p class="text-photo"><strong>Comments:</strong> ${comments}</p>
+                    <p class="text-photo"><strong>Downloads:</strong> ${downloads}</p>
                 </div>
             </div>
         </a>

@@ -53,13 +53,28 @@
 }
 
 .js-gallery img {
-    width: 300px;
+    width: 360px;
     height: 200px;
     object-fit: cover;
 }
 
-.hidden {
-    display: none;
+.info {
+    display: flex;
+    padding: 4px 20px;
+    justify-content: space-between;
+}
+
+.text-photo {
+    display: flex;
+    flex-direction: column;
+    color: #2e2f42;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.48px;
 }
 
 .wrap-loader {

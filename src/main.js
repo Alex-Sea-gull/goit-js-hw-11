@@ -10,6 +10,8 @@ import { toggleLoader } from './js/loader.js';
 const searchForm = document.querySelector('.js-form-container');
 searchForm.addEventListener('submit', searchFoto);
 
+toggleLoader(false);
+
 function searchFoto(event) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -19,6 +21,8 @@ function searchFoto(event) {
         iziToast.error({
             message: 'Please enter the data in the input field',
             position: 'topRight',
+            messageColor: '#ffffff',
+            backgroundColor: '#EF4040',
         });
         clearGallery();
         return;
@@ -28,10 +32,13 @@ function searchFoto(event) {
 
     searchImagesByQuery(inputValue)
         .then(data => {
+            toggleLoader(false);
             if (!data.hits.length) {
                 iziToast.error({
                     message: 'Sorry, there are no images matching your search query. Please try again!',
                     position: 'topRight',
+                    messageColor: '#ffffff',
+                    backgroundColor: '#EF4040',
                 });
                 clearGallery();
                 return;
