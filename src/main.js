@@ -39,16 +39,17 @@ function searchFoto(event) {
                     backgroundColor: '#EF4040',
                 });
                 clearGallery();
-                return;
+                return {};
             }
             creatMarkupImages(data.hits);
+            return data;
         })
         .catch(error => {
             console.log(error);
+            clearGallery();
         })
         .finally(() => {
             toggleLoader(false);
+            form.reset();
         });
-
-    form.reset();
 }
