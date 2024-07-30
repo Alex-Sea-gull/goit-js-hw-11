@@ -4,8 +4,8 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { searchImagesByQuery } from './js/pixabay-api.js';
-import { creatMarkupImages } from './js/render-functions.js';
-import { clearGallery } from './js/render-functions.js';
+import { creatMarkupImages, clearGallery } from './js/render-functions.js';
+import { toggleLoader } from './js/loader.js';
 
 const searchForm = document.querySelector('.js-form-container');
 searchForm.addEventListener('submit', searchFoto);
@@ -24,6 +24,8 @@ function searchFoto(event) {
         return;
     }
 
+    toggleLoader(true);
+
     searchImagesByQuery(inputValue)
         .then(data => {
             if (!data.hits.length) {
@@ -38,6 +40,7 @@ function searchFoto(event) {
         })
         .catch(error => {
             console.log(error);
+            toggleLoader(false);
         });
 
     form.reset();

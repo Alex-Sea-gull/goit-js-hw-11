@@ -19,9 +19,13 @@ export function creatMarkupImages(images) {
         </a>
     `).join('');
 
-    gallery.insertAdjacentHTML('beforeend', markup);
+    gallery.innerHTML = markup;
 
-    const lightbox = new SimpleLightbox('.gallery a');
+    const lightbox = new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionDelay: 250,
+        overlayOpacity: 0.9,
+    });
     lightbox.refresh();
 }
 
