@@ -12,6 +12,7 @@ searchForm.addEventListener('submit', searchFoto);
 
 function searchFoto(event) {
     event.preventDefault();
+    clearGallery();
     const form = event.currentTarget;
     const inputValue = form.elements.search.value.toLowerCase().trim();
 
@@ -25,7 +26,7 @@ function searchFoto(event) {
             messageColor: '#ffffff',
             backgroundColor: '#EF4040',
         });
-        clearGallery();
+        toggleLoader(false);
         return;
     }
 
@@ -38,7 +39,6 @@ function searchFoto(event) {
                     messageColor: '#ffffff',
                     backgroundColor: '#EF4040',
                 });
-                clearGallery();
                 return {};
             }
             creatMarkupImages(data.hits);
@@ -46,7 +46,6 @@ function searchFoto(event) {
         })
         .catch(error => {
             console.log(error);
-            clearGallery();
         })
         .finally(() => {
             toggleLoader(false);
